@@ -35,14 +35,12 @@ class MyProfileView: UIView {
 
     let profileImageView: UIImageView = {
         let imageView = UIImageView()
-        imageView.layer.cornerRadius = 35
         return imageView
     }()
 
-    let qrView: UIView = {
-        let view = UIView()
-        view.backgroundColor = .black
-        return view
+    let qrImageView: UIImageView = {
+        let imageView = UIImageView()
+        return imageView
     }()
 
     init(profile: Profile?) {
@@ -64,6 +62,10 @@ class MyProfileView: UIView {
 
     func setupUI() {
         addSubview(profileImageView)
+        profileImageView.layer.masksToBounds = true
+        profileImageView.layer.cornerRadius = 35
+        profileImageView.layer.borderColor = UIColor.lightGray.withAlphaComponent(0.08).cgColor
+        profileImageView.layer.borderWidth = 5
         profileImageView.translatesAutoresizingMaskIntoConstraints = false
         profileImageView.heightAnchor.constraint(equalToConstant: 70).isActive = true
         profileImageView.widthAnchor.constraint(equalToConstant: 70).isActive = true
@@ -83,19 +85,20 @@ class MyProfileView: UIView {
         titleLabel.centerXAnchor.constraint(equalTo: centerXAnchor, constant: 0).isActive = true
         titleLabel.leadingAnchor.constraint(greaterThanOrEqualTo: leadingAnchor, constant: 8).isActive = true
 
-        addSubview(qrView)
-        qrView.translatesAutoresizingMaskIntoConstraints = false
-        qrView.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 4).isActive = true
-        qrView.centerXAnchor.constraint(equalTo: centerXAnchor, constant: 0).isActive = true
-        qrView.widthAnchor.constraint(equalTo: qrView.heightAnchor).isActive = true
-        qrView.leadingAnchor.constraint(greaterThanOrEqualTo: leadingAnchor, constant: 8).isActive = true
-        qrView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -12).isActive = true
+        addSubview(qrImageView)
+        qrImageView.translatesAutoresizingMaskIntoConstraints = false
+        qrImageView.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 4).isActive = true
+        qrImageView.centerXAnchor.constraint(equalTo: centerXAnchor, constant: 0).isActive = true
+        qrImageView.widthAnchor.constraint(equalTo: qrImageView.heightAnchor).isActive = true
+        qrImageView.leadingAnchor.constraint(greaterThanOrEqualTo: leadingAnchor, constant: 8).isActive = true
+        qrImageView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -12).isActive = true
     }
 
-    func configure(with profile: Profile?) {
+    private func configure(with profile: Profile?) {
         guard let profile = profile else { return }
         profileImageView.image = profile.image
         nameLabel.text = profile.name
         titleLabel.text = profile.title
+        qrImageView.image = UIImage()
     }
 }

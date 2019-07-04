@@ -79,6 +79,10 @@
                         <constraint firstAttribute="height" constant="70" id="Mws-fH-sgJ"/>
                         <constraint firstAttribute="width" constant="70" id="dnW-aE-1uc"/>
                     </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="50"/>
+                    <state key="normal" title="+">
+                        <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bA8-Jv-J7D">
                     <rect key="frame" x="217.66666666666666" y="566.33333333333337" width="69.999999999999972" height="70"/>
@@ -86,7 +90,7 @@
                         <constraint firstAttribute="height" constant="70" id="gEo-ST-Sft"/>
                         <constraint firstAttribute="width" constant="70" id="tCd-kZ-bDI"/>
                     </constraints>
-                    <state key="normal" title="Button"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="50"/>
                 </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -112,7 +116,7 @@
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="E7w-9H-glq" secondAttribute="trailing" id="xJI-w7-JIq"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
-            <point key="canvasLocation" x="47.826086956521742" y="35.491071428571423"/>
+            <point key="canvasLocation" x="47.200000000000003" y="35.467980295566505"/>
         </view>
     </objects>
 </document>

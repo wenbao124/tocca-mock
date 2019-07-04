@@ -12,7 +12,7 @@ class ContactsViewController: UIViewController {
 
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
-        tabBarItem = UITabBarItem(title: "Contacts", image: UIImage(named: "Contacts"), tag: 1)
+        tabBarItem = UITabBarItem(tabBarSystemItem: .contacts, tag: 1)
     }
 
     required init?(coder aDecoder: NSCoder) {

@@ -12,7 +12,7 @@ class SettingsViewController: UIViewController {
 
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
-        tabBarItem = UITabBarItem(title: "Settings", image: UIImage(), tag: 1)
+        tabBarItem = UITabBarItem(title: "Settings", image: UIImage(named: "settings"), tag: 1)
     }
 
     required init?(coder aDecoder: NSCoder) {

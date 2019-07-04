@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AssetsLibrary
 
 class MyCardViewController: UIViewController {
 
@@ -20,7 +21,7 @@ class MyCardViewController: UIViewController {
     init(profile: Profile?) {
         self.profile = profile
         super.init(nibName: nil, bundle: nil)
-        tabBarItem = UITabBarItem(title: "My Card", image: UIImage(), tag: 1)
+        tabBarItem = UITabBarItem(title: "Settings", image: UIImage(named: "user_male"), tag: 1)
     }
 
     required init?(coder aDecoder: NSCoder) {
@@ -36,6 +37,17 @@ class MyCardViewController: UIViewController {
         shareButton.layer.cornerRadius = 35
         myProfileView.layer.cornerRadius = 15
         myProfileView.profile = profile
-        
+
+        shareButton.setImage(UIImage(named: "upload-symbol"), for: .normal)
+        scanQRButton.addTarget(self, action: #selector(scanQRButtonPressed), for: .touchUpInside)
+        shareButton.addTarget(self, action: #selector(shareButtonPressed), for: .touchUpInside)
+    }
+
+    @objc private func scanQRButtonPressed() {
+//     Open camera and scan QR CODE
+    }
+
+    @objc private func shareButtonPressed() {
+//     Share the profile through network requests.  
     }
 }

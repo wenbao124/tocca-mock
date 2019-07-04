@@ -15,7 +15,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
 
-        Profile.currentProfile = Profile("Tanya Ofek", "UX Designer at Tocca.io", UIImage(), "")
+        Profile.currentProfile = Profile("Tanya Ofek", "UX Designer at Tocca.io", UIImage(named: "tanya") ?? UIImage(), "")
 
         let contactsVC = ContactsViewController()
         let myCardVC = MyCardViewController(profile: Profile.currentProfile)
