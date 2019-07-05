@@ -67,7 +67,7 @@ class MyCardViewController: UIViewController {
         let blueViewLayer = CAShapeLayer()
         blueViewLayer.path = benzierPath.cgPath
         blueViewLayer.fillColor = blueViewBackgroundColor.cgColor
-        blueView.layer.insertSublayer(blueViewLayer,at:0)
+        blueView.layer.insertSublayer(blueViewLayer, at: 0)
     }
 
     @objc private func scanQRButtonPressed() {

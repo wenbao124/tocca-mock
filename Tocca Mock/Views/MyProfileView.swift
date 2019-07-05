@@ -35,15 +35,17 @@ class MyProfileView: UIView {
 
     let profileImageView: UIImageView = {
         let imageView = UIImageView()
-        imageView.layer.masksToBounds = true
         imageView.layer.cornerRadius = 35
-        imageView.layer.shadowColor = UIColor.black.cgColor
-        imageView.layer.shadowOpacity = 0.5
-        imageView.layer.shadowOffset = .zero
-        imageView.layer.shadowRadius = 6
-        imageView.layer.shouldRasterize = true
-        imageView.layer.rasterizationScale = UIScreen.main.scale
+        imageView.clipsToBounds = true
         return imageView
+    }()
+
+    let outerView: UIView = {
+        let outerView = UIView()
+        outerView.backgroundColor = .blue
+        outerView.layer.cornerRadius = 35
+        outerView.clipsToBounds = false
+        return outerView
     }()
 
     let qrImageView: UIImageView = {
@@ -69,16 +71,16 @@ class MyProfileView: UIView {
     }
 
     private func setupUI() {
-        addSubview(profileImageView)
-        profileImageView.translatesAutoresizingMaskIntoConstraints = false
-        profileImageView.heightAnchor.constraint(equalToConstant: 70).isActive = true
-        profileImageView.widthAnchor.constraint(equalToConstant: 70).isActive = true
-        profileImageView.topAnchor.constraint(equalTo: topAnchor, constant: 8).isActive = true
-        profileImageView.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
+        addSubview(outerView)
+        outerView.translatesAutoresizingMaskIntoConstraints = false
+        outerView.heightAnchor.constraint(equalToConstant: 70).isActive = true
+        outerView.widthAnchor.constraint(equalToConstant: 70).isActive = true
+        outerView.topAnchor.constraint(equalTo: topAnchor, constant: 8).isActive = true
+        outerView.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
 
         addSubview(nameLabel)
         nameLabel.translatesAutoresizingMaskIntoConstraints = false
-        nameLabel.topAnchor.constraint(equalTo: profileImageView.bottomAnchor, constant: 4).isActive = true
+        nameLabel.topAnchor.constraint(equalTo: outerView.bottomAnchor, constant: 4).isActive = true
         nameLabel.centerXAnchor.constraint(equalTo: centerXAnchor, constant: 0).isActive = true
         nameLabel.leadingAnchor.constraint(greaterThanOrEqualTo: leadingAnchor, constant: 8).isActive = true
 
@@ -95,7 +97,7 @@ class MyProfileView: UIView {
         qrImageView.centerXAnchor.constraint(equalTo: centerXAnchor, constant: 0).isActive = true
         qrImageView.widthAnchor.constraint(equalTo: qrImageView.heightAnchor).isActive = true
         qrImageView.leadingAnchor.constraint(greaterThanOrEqualTo: leadingAnchor, constant: 8).isActive = true
-        qrImageView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -12).isActive = true
+        qrImageView.bottomAnchor.constraint(lessThanOrEqualTo: bottomAnchor, constant: -5).isActive = true
     }
 
     private func configure(with profile: Profile?) {
@@ -103,6 +105,26 @@ class MyProfileView: UIView {
         profileImageView.image = profile.image
         nameLabel.text = profile.name
         titleLabel.text = profile.title
-        qrImageView.image = UIImage()
+        let data = profile.qrCode.data(using: .isoLatin1, allowLossyConversion: false)
+        let filter = CIFilter(name: "CIQRCodeGenerator")
+        filter?.setValue(data, forKey: "InputMessage")
+        let ciImage = filter?.outputImage
+        let transform = CGAffineTransform(scaleX: 10, y: 10)
+        let transformImage = ciImage?.transformed(by: transform)
+        if let transformImage = transformImage {
+            qrImageView.image = UIImage(ciImage: transformImage)
+        }
+    }
+
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        outerView.layer.shadowColor = UIColor.black.cgColor
+        outerView.layer.shadowOpacity = 0.5
+        outerView.layer.shadowOffset = .zero
+        outerView.layer.shadowRadius = 6
+        outerView.layer.shouldRasterize = true
+        outerView.layer.rasterizationScale = UIScreen.main.scale
+        outerView.addSubview(profileImageView)
+        profileImageView.frame = outerView.bounds
     }
 }

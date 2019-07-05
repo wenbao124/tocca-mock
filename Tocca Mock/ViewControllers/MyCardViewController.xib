@@ -25,34 +25,34 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="E7w-9H-glq">
-                    <rect key="frame" x="0.0" y="44" width="375" height="540.33333333333337"/>
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="584.33333333333337"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SCAN QR/BC" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rtd-S7-a3o">
-                            <rect key="frame" x="67.333333333333343" y="490.66666666666663" width="110.33333333333334" height="21.666666666666629"/>
+                            <rect key="frame" x="67.333333333333343" y="534.66666666666663" width="110.33333333333334" height="21.666666666666629"/>
                             <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SHARE" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uGc-WO-D8q">
-                            <rect key="frame" x="222.66666666666666" y="491" width="59.666666666666657" height="21.333333333333371"/>
+                            <rect key="frame" x="222.66666666666666" y="535" width="59.666666666666657" height="21.333333333333371"/>
                             <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My Card" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YNH-B2-7oB">
-                            <rect key="frame" x="131" y="45" width="113" height="34.666666666666657"/>
+                            <rect key="frame" x="131" y="89" width="113" height="34.666666666666657"/>
                             <fontDescription key="fontDescription" type="boldSystem" pointSize="29"/>
                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Point other phone camera to scan QR Code." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OFx-rS-qXV">
-                            <rect key="frame" x="87.666666666666686" y="422.66666666666669" width="200" height="36"/>
+                            <rect key="frame" x="87.666666666666686" y="466.66666666666669" width="200" height="36"/>
                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
                             <color key="textColor" white="1" alpha="0.5" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2W0-5a-Fi1" customClass="MyProfileView" customModule="Tocca_Mock" customModuleProvider="target">
-                            <rect key="frame" x="87.666666666666686" y="99.666666666666629" width="200" height="320"/>
+                            <rect key="frame" x="87.666666666666686" y="143.66666666666663" width="200" height="320"/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="320" id="J1M-7d-b9t"/>
@@ -72,7 +72,7 @@
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UCO-cR-57v">
-                    <rect key="frame" x="0.0" y="584.33333333333337" width="375" height="193.66666666666663"/>
+                    <rect key="frame" x="0.0" y="584.33333333333337" width="375" height="227.66666666666663"/>
                     <color key="backgroundColor" red="0.29089010805594301" green="0.35100407025864078" blue="0.95359319448471069" alpha="0.059663955479452052" colorSpace="custom" customColorSpace="displayP3"/>
                 </view>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5WK-g3-HOZ">
@@ -101,7 +101,7 @@
                 <constraint firstItem="UCO-cR-57v" firstAttribute="top" secondItem="5WK-g3-HOZ" secondAttribute="bottom" priority="900" constant="-50" id="5w5-do-Y0O"/>
                 <constraint firstItem="E7w-9H-glq" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="7MZ-yw-vyR"/>
                 <constraint firstItem="5WK-g3-HOZ" firstAttribute="top" relation="greaterThanOrEqual" secondItem="rtd-S7-a3o" secondAttribute="bottom" constant="4" id="99H-y3-dls"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="UCO-cR-57v" secondAttribute="bottom" id="BRW-68-6ja"/>
+                <constraint firstAttribute="bottom" secondItem="UCO-cR-57v" secondAttribute="bottom" id="BRW-68-6ja"/>
                 <constraint firstItem="2W0-5a-Fi1" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="Hvb-rW-fwB"/>
                 <constraint firstItem="UCO-cR-57v" firstAttribute="top" secondItem="E7w-9H-glq" secondAttribute="bottom" id="N1P-rM-PK6"/>
                 <constraint firstItem="UCO-cR-57v" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="Oyf-5G-hbS"/>
@@ -113,7 +113,7 @@
                 <constraint firstItem="bA8-Jv-J7D" firstAttribute="top" secondItem="5WK-g3-HOZ" secondAttribute="top" id="fQ1-BZ-a1t"/>
                 <constraint firstItem="5WK-g3-HOZ" firstAttribute="top" secondItem="rtd-S7-a3o" secondAttribute="bottom" priority="500" constant="8" id="oEH-7i-wcs"/>
                 <constraint firstItem="2W0-5a-Fi1" firstAttribute="leading" secondItem="5WK-g3-HOZ" secondAttribute="leading" id="ofv-e4-TWc"/>
-                <constraint firstItem="E7w-9H-glq" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="ovi-Ha-WjN"/>
+                <constraint firstItem="E7w-9H-glq" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="ovi-Ha-WjN"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="UCO-cR-57v" secondAttribute="trailing" id="thR-ac-tlV"/>
                 <constraint firstItem="5WK-g3-HOZ" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" constant="-65" id="uof-SI-loo"/>
                 <constraint firstItem="rtd-S7-a3o" firstAttribute="centerX" secondItem="5WK-g3-HOZ" secondAttribute="centerX" id="vaO-Uo-5SV"/>
