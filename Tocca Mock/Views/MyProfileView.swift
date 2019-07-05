@@ -35,6 +35,14 @@ class MyProfileView: UIView {
 
     let profileImageView: UIImageView = {
         let imageView = UIImageView()
+        imageView.layer.masksToBounds = true
+        imageView.layer.cornerRadius = 35
+        imageView.layer.shadowColor = UIColor.black.cgColor
+        imageView.layer.shadowOpacity = 0.5
+        imageView.layer.shadowOffset = .zero
+        imageView.layer.shadowRadius = 6
+        imageView.layer.shouldRasterize = true
+        imageView.layer.rasterizationScale = UIScreen.main.scale
         return imageView
     }()
 
@@ -60,12 +68,8 @@ class MyProfileView: UIView {
         setupUI()
     }
 
-    func setupUI() {
+    private func setupUI() {
         addSubview(profileImageView)
-        profileImageView.layer.masksToBounds = true
-        profileImageView.layer.cornerRadius = 35
-        profileImageView.layer.borderColor = UIColor.lightGray.withAlphaComponent(0.08).cgColor
-        profileImageView.layer.borderWidth = 5
         profileImageView.translatesAutoresizingMaskIntoConstraints = false
         profileImageView.heightAnchor.constraint(equalToConstant: 70).isActive = true
         profileImageView.widthAnchor.constraint(equalToConstant: 70).isActive = true
